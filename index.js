@@ -32,31 +32,39 @@ var swiper = new Swiper(".home-slider",{
   },
   loop:true
 });
-
-var swiper = new Swiper(".review-slider", {
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
+// Swiper funtion
+var swiper = new Swiper(".review-slider",{
+  spaceBetween:30,
+  centeredSlides:true,
+  autoplay:{
+    delay:3000,
+    disableOnInteraction:false,
   },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+  pagination :{
+    el:".swiper-pagination",
+    clickable:true,
   },
-  loop: true,
-  breakpoints: {
-    0: {
+  loop:true,
+  breakpoints:{
+    0:{
       slidesPerView:1,
     },
-    640: {
+    640:{
       slidesPerView:2,
     },
-    768: {
+    768:{
       slidesPerView:2,
     },
-    1024: {
+    1024:{
       slidesPerView:3,
     }
   }
 });
+/**Loader section**/
+function loader(){
+  document.querySelector(".loader-container").classList.add("fade-out")
+}
+function fadeOut(){
+  setInterval(loader, 3000)
+}
+window.onload = fadeOut;
